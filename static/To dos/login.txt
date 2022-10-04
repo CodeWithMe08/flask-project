@@ -1,0 +1,72 @@
+'''login section!'''
+class Login(db.Model):
+    sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    date = db.Column(db.String(15), nullable=True)
+
+
+@app.route("/", methods = ['GET', 'POST'])
+def login():
+    if(request.method=='POST'):
+        '''Add entry to the database'''
+        lname = request.form.get('name')
+        lemail = request.form.get('email')          
+        login_user = Login(name=lname, email = lemail, date= datetime.now() )
+        db.session.add(login_user)
+        db.session.commit()    
+    return render_template('index.html', params = params)
+    
+
+document.getElementById('button').addEventListener("click", function() {
+    document.querySelector('.bg-modal').style.display = "flex";
+    });
+    
+document.querySelector('.ender').addEventListener("click", function() {
+    document.querySelector('.bg-modal').style.display = "none";
+    });
+
+
+  <!--MODAL LOGIN-->
+            <div class="bg-modal" id="button">
+                <div class="modal-contents">
+                    <div class="closes">+</div>
+                    <img src="{{url_for('static', filename='images/behances.png')}}" alt="github">
+                    <form action="#">
+                        <input type="text" placeholder="Name" class="validate" required>
+                        <input type="email" placeholder="E-Mail" class="validate" required>
+                        <button type="submit">login</button> 
+                    </form>
+                </div>
+            </div>
+
+
+
+<li><a href="#" id="button">Login</a></li>   
+<li><a href="#" id="button">Login</a></li> 
+
+CSS
+.bg-modal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+.ender {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+	&:hover {
+		color: #666;
+	}
+}
+
+       

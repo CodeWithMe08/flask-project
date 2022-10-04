@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>{{params['automation_title']}}</title>
+{% endblock  %}
+
+{% block body %}
+
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+          <!--  <img src="1.png" class="mobile_profile_image" alt="">   -->
+            <i class="fa fa-bars nav_btn"></i>
+          </div>
+      <div class="mobile_nav_items">
+    
+        <a href="/automation"><i class="fas fa-desktop"></i><span>Home Page</span></a>
+        {% for auto_post in automation_posts %}
+        <a href="/automation/automation_post/{{auto_post.slug}}"><i class="fas fa-desktop"></i><span>{{auto_post.title}}</span></a>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <!--sidebar start-->
+    <div class="sidebar">
+        <a href="/automation"><i class="fas fa-desktop"></i><span>Home Page</span></a>
+        {% for auto_post in automation_posts %}
+        <a href="/automation/automation_post/{{auto_post.slug}}"><i class="fas fa-desktop"></i><span>{{auto_post.title}}</span></a>
+        {% endfor %}
+
+    </div>
+    <!--sidebar end-->
+
+    <div class="content">
+        <div class="card">
+           <h1>{{automation_post.subtitle}}</h1>
+           <p>{{automation_post.content}}</p>
+          
+       </div>
+   </div>
+
+   {% endblock body %}

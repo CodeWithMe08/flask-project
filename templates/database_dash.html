@@ -1,0 +1,63 @@
+{% extends 'dashboard.html' %}
+{% block body %}
+  
+    <!--header area start-->
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                
+                <li><a href="/logout">logout</a></li>
+                
+                <li><a href="/database_edit/0">add post</a></li>
+                
+                <li><a href="/automation_dash">automation</a></li>
+                              
+                <li><a href="/database_dash">database</a></li>
+
+                <li><a href="/python_dash">python</a></li> 
+                
+              <!--  <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search this website">
+                </div>  -->
+            </ul>
+        </nav>
+    </header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5" >
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+          
+        <h1>Edit Database Posts</h1>
+  
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Sno.</th>
+              <th scope="col">Title</th>
+              <th scope="col">Date</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+  
+            {% for db_post in database_posts %}
+            
+            <tr>             
+              <td>{{db_post.sno}}</td>
+              <td>{{db_post.title}}</td>
+              <td>{{db_post.date}}</td>
+              <td><a href="/database_edit/{{db_post.sno}}"><button class = "btn btn-primary">Edit</button></a></td>
+              <td><a href="/database_delete/{{db_post.sno}}"><button class = "btn btn-primary">Delete</button></a></td>
+            </tr>
+            
+            {% endfor %}  
+  
+          </tbody>
+        </table>
+  
+        </div>
+    </div>
+</div>
+{% endblock body %} 

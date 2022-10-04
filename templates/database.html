@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{params['database_title']}}</title>
+{% endblock  %}
+
+{% block body %}
+
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <!--  <img src="1.png" class="mobile_profile_image" alt="">   -->
+          <i class="fa fa-bars nav_btn"></i>
+        </div>
+    <div class="mobile_nav_items">
+      <a href="/database"><i class="fas fa-desktop"></i><span>Home Page</span></a>
+      {% for db_post in database_posts %}
+      <a href="/database/database_post/{{db_post.slug}}"><i class="fas fa-desktop"></i><span>{{db_post.title}}</span></a>
+      {% endfor %}
+   
+    </div>
+  </div>
+  <!--sidebar start-->
+  <div class="sidebar">
+    <a href="/database"><i class="fas fa-desktop"></i><span>Home Page</span></a>
+    {% for db_post in database_posts %}
+      <a href="/database/database_post/{{db_post.slug}}"><i class="fas fa-desktop"></i><span>{{db_post.title}}</span></a>
+      {% endfor %}
+  
+  </div>
+  <!--sidebar end-->
+
+<div class="content">
+    <div class="card">
+          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci maiores id n<br>
+           obis est quasi vero ipsum reiciendis, eos fugit laborum aperiam, ipsa facilis rerum.
+           Incidunt ut aliquid numquam, doloremque repellendus pariatur iusto veritatis hic dic
+           ta vero molestiae nisi fuga obcaecati neque ad, dolorum, commodi laboriosam quibusdam<br>
+           aut? Commodi modi tempora vitae magni ab eaque asperiores hic magnam consectetur dicta <br>
+           praesentium minima, perspiciatis iste. Ut voluptas odio ducimus sunt, cupiditate obcaecati
+           fuga voluptates reiciendis laborum magni tempore, neque minus et quidem adipisci temporibu
+           s dicta aliquam eveniet. Quibusdam ipsum laudantium est delectus, at laboriosam omnis, exerci
+           tationem, ipsa architecto doloribus excepturi ad repellendus repellat eos molestias. Omnis facere in e
+           st et accusamus! Repudiandae atque vel ipsam vero maxime! Ut, cum dicta quos odit, fuga voluptate eveniet 
+           blanditiis dolorem similique modi nihil dolores expedita dolor
+           numquam placeat consequuntur pariatur et odit omnis atque! Nemo velit unde maiores animi recusandae.</p>
+    </div>
+</div>
+
+   {% endblock body %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{{ url_for('static', filename='css/mail.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="success">
+        <lottie-player class="lottie" src="https://assets2.lottiefiles.com/private_files/lf30_4dfb546p.json" background="transparent"  speed="1" ></lottie-player>
+    </div>
+    
+    <form name ="form" class="form-container" action = "/mail_listing" method="post">
+        <div class="onstart">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_aKRZfw.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        </div>
+       
+        <h1 class="seq">Want to get in touch?</h1>
+        <label for="name" class="seq">Name</label>
+        <input type="text" name="name"id="name" class="seq" required>
+        <label for="email" class="seq">Email Address</label>
+        <input type="text" name="email"id="email" class="seq" data-sb-validations="required,email" required>          
+        <p class="seq">Dont worrry we won't hound you with emails like our compatitors</p>
+        <a href="#" class="cta seq">Join List</a>
+        <button>submit</button>
+    </form>
+
+    <h2>Success!</h2>
+
+    <!--lottie player script-->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!--gsap cdn script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        let tl = new gsap.timeline({defaults:{esse:Circ.easeOut}})
+        let cta = document.querySelector('.cta')
+        const player = document.querySelector('.lottie')
+
+        tl.paused(true)
+        tl.to('.seq', {y:40, opacity: 0, stagger: .05})
+        tl.to('.form-container', { opacity: 0}, "-=.4")
+        tl.to('h2', { opacity: 1, duration: 2, y: 20}, "+=1")
+
+        cta.addEventListener('click', () => {
+            tl.play()
+            setTimeout(() => {
+                player.play()
+                }, 800)
+            })
+    </script>
+
+</body>
+</html>
+

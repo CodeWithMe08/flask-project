@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    
+    {% endblock  %}
+
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"> 
+
+  </head>
+  <body>
+
+    <!--header area start-->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <div class="left_area">
+                    <a href="/" style="color:rgb(236, 185, 255)"> Home </a>
+                  </div>                
+                <li><a href="#">Logout</a></li>
+                <li><a href="/#mywork">My Work</a></li>
+                <li><a href="/#myskills">Courses</a></li>
+                
+              <!--  <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search this website">
+                </div>  -->
+            </ul>
+        </nav>
+    </header>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+    
+
+{% block body %}
+    
+{% endblock body %}
+        
+</body>
+</html>

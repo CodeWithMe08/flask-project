@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+ body{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#171717,#ffffff);}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 50%;
+    height: 40%;
+    background: linear-gradient(#000000,#ffffff);
+    clip-path: polygon(30% 10%, 50% 40%, 30% 75%);
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    right: 1%;
+    width: 50%;
+    height: 40%;
+    transform: rotate(180deg);
+    background: linear-gradient(#000000,#ffffff);
+    clip-path: polygon(30% 10%, 50% 40%, 30% 75%);
+    bottom: 86px;
+}
+
+.navbar{
+    background-color: #2b2c28;
+   /* border-radius: 30px;*/
+   z-index: 1;
+    position: fixed;
+    padding: 20px;
+    width: calc(100% - 0%);
+    top: 0;
+    height: 30px; 
+    left: 0%;
+}
+/*.navbar ul{
+    overflow: auto;
+}*/
+.navbar li{
+    float:right;
+    list-style: none; 
+    margin: -8px 50px 35px 10px;
+    
+}
+.left_area{
+    color: #fff;
+    margin: -25px 10px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.navbar li a{
+    padding: 0px 0px;
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+}
+.navbar li a:hover{
+    color: rgb(253, 228, 255)
+}

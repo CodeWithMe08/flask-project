@@ -1,0 +1,26 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri": "mysql://root:@localhost/personal_protfolio",
+        "prod_uri": "mysql://root:@localhost/personal_protfolio",
+        "fb_url":"https://facebook.com/personal_protfolio",
+        "tw_url":"https://twitter.com/personal_protfolio",
+        "gh_url":"https://github.com/personal_protfolio",
+        "site_title":"My Portfolio",
+        "panel_title":"Admin Panel",
+        "python_title":"Python Documentation",
+        "database_title":"Database Documentation",
+        "automation_title":"Automation Documentation",
+        "tagline": "We Learn Something New Everyday!",
+        "gmail-user": "raunakvarma05@gmail.com",
+        "gmail-password":"lootadcrpscicuie",   
+        "admin_user":"raunakvarma",
+        "admin_password":"sm7wx98d6kbi8",
+        "upload_location":"C:\\Users\\asus\\personal_protfolio\\static\\images",
+        "site_name":"bigfatbrains",
+        "about_text":""
+        
+    }
+
+}

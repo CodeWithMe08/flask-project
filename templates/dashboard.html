@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{{ url_for('static', filename='css/dash.css') }}" rel="stylesheet">
+</head>
+<body>
+{% block body %}
+    
+    <!--header area start-->
+    <header>
+        <nav class="navbar">
+            <ul>                
+                <li><a href="/logout">logout</a></li>              
+                <li><a href="/edit/0">add post</a></li>               
+                <li><a href="/automation_dash">automation</a></li>                            
+                <li><a href="/database_dash">database</a></li>
+                <li><a href="/python_dash">python</a></li> 
+            </ul>
+        </nav>
+    </header>
+        
+<!-- <h1>Upload a file</h1> -->        
+    <form action="/uploader" method="post" enctype="multipart/form-data">
+        <input type="file" name="file1">
+        <button type="submit" class="button">Submit</button>
+    </form>
+{% endblock body %} 
+  
+</body>
+</html> 

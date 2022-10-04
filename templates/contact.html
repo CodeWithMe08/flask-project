@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- flash messaging! -->
+  {% with messages = get_flashed_messages(with_categories=true)%}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+  {{message}}
+  <button type="button" id="alert" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}  
+
+  <div class="signupSection">
+  <div class="info">
+    <h2>What you'll get..</h2>
+    <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+    <p>Easily customisable website </p>
+    <p>Database connetion to website </p>
+    <p>For animation extras will be charged </p>
+    <p>A responsive website for all framesize </p>
+
+  </div>
+  <form action="/" id="contact" method="post" class="signupForm" name="signupform"data-sb-form-api-token="API_TOKEN">
+    <h2>Contact me!</h2>
+    <ul class="noBullet">
+      <li>
+        <label for="name"></label>
+        <input type="text" class="inputFields" id="name"  placeholder="your name..."name="name" data-sb-validations="required" required autofocus/>
+      </li>
+      <li>
+        <label for="email"></label>
+        <input type="email" class="inputFields" id="email" placeholder="your email..." name="email" data-sb-validations="required,email" required/>
+      </li>
+      <li>
+      <li>
+        <label for="phone"></label>
+        <input type="text" class="inputFields" id="phone" placeholder="your phone..."name="phone" data-sb-validations="required" required/>
+      </li>
+      
+        <label for="message"></label>
+        <textarea rows="1" class="inputFields" id="message"placeholder="message..." name="message" data-sb-validations="required" required></textarea>
+      </li>
+      <li id="center-btn">
+        <input type="submit" id="join-btn" name="join" alt="Join" value="Join">
+      </li>
+    </ul>
+  </form>
+</div>
+</body>
+</html>
